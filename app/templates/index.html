@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio - Mi Restaurante{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h2>Bienvenido a Mi Restaurante</h2>
+    <p>Disfruta de nuestra comida y reserva tu mesa fácilmente.</p>
+    <div class="buttons">
+        <button id="pedido-btn">Hacer un pedido</button>
+        <button id="reserva-btn">Reservar mesa</button>
+    </div>
+</section>
+
+<section id="form-container" class="hidden">
+    <div id="pedido-form" class="form hidden">
+        <h3>Formulario de Pedido</h3>
+        <form>
+            <label>Nombre:</label>
+            <input type="text" name="nombre" required>
+            <label>Plato:</label>
+            <input type="text" name="plato" required>
+            <label>Cantidad:</label>
+            <input type="number" name="cantidad" min="1" value="1">
+            <button type="submit">Enviar Pedido</button>
+        </form>
+    </div>
+
+    <div id="reserva-form" class="form hidden">
+        <h3>Formulario de Reserva</h3>
+        <form>
+            <label>Nombre:</label>
+            <input type="text" name="nombre" required>
+            <label>Fecha:</label>
+            <input type="date" name="fecha" required>
+            <label>Hora:</label>
+            <input type="time" name="hora" required>
+            <label>Personas:</label>
+            <input type="number" name="personas" min="1" value="1">
+            <button type="submit">Reservar Mesa</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
