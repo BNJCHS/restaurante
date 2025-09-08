@@ -2,15 +2,19 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # Panel Admin (AJAX dinámico)
-    path('', views.dashboard, name='admin_dashboard'),
-    # AJAX
-    path('ajax/<str:section>/', views.ajax_section, name='ajax_section'),
+    path("", views.dashboard, name="dashboard"),
 
-    # Formularios
-    path('platos/<int:pk>/editar/', views.editar_plato, name='plato_edit'),
-    path('platos/<int:pk>/eliminar/', views.eliminar_plato, name='plato_eliminar'),
+    # Platos
+    path("platos/", views.lista_platos, name="lista_platos"),
+    path("platos/nuevo/", views.crear_plato, name="crear_plato"),
+    path("platos/<int:pk>/editar/", views.editar_plato, name="editar_plato"),
+    path("platos/<int:pk>/eliminar/", views.eliminar_plato, name="eliminar_plato"),
 
-    path('pedidos/<int:pk>/editar/', views.pedido_edit, name='pedido_edit'),
-    path('reservas/<int:pk>/editar/', views.reserva_edit, name='reserva_edit'),
+    # Pedidos
+    path("pedidos/", views.lista_pedidos, name="lista_pedidos"),
+    path("pedidos/<int:pk>/editar/", views.editar_pedido, name="editar_pedido"),
+
+    # Reservas
+    path("reservas/", views.lista_reservas, name="lista_reservas"),
+    path("reservas/<int:pk>/editar/", views.editar_reserva, name="editar_reserva"),
 ]

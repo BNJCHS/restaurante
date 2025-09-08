@@ -1,0 +1,29 @@
+{% extends 'base_admin.html' %}
+{% block content %}
+<h2>Reservas</h2>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Cliente</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for reserva in reservas %}
+        <tr>
+            <td>{{ reserva.cliente }}</td>
+            <td>{{ reserva.fecha }}</td>
+            <td>{{ reserva.hora }}</td>
+            <td>
+                <a class="btn btn-warning btn-sm" href="{% url 'editar_reserva' reserva.id %}">Editar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="4">No hay reservas registradas.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -15,6 +15,7 @@ class Reserva(models.Model):
     cantidad_personas = models.PositiveIntegerField()
     mensaje = models.TextField(blank=True, null=True)
     creado = models.DateTimeField(auto_now_add=True)
+    confirmado = models.BooleanField(default=False)  # ✅ Nuevo campo
 
     def __str__(self):
         return f"Reserva de {self.nombre} - {self.fecha} {self.hora}"

@@ -1,0 +1,34 @@
+{% extends 'base_admin.html' %}
+
+{% block content %}
+<h1 class="mb-4">Panel de Administración</h1>
+
+<div class="row text-center">
+    <div class="col-md-4 mb-3">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5>Total Pedidos</h5>
+                <p class="display-6">{{ total_pedidos }}</p>
+                <p>Pendientes: {{ pedidos_pendientes }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5>Total Reservas</h5>
+                <p class="display-6">{{ total_reservas }}</p>
+                <p>Próximas: {{ reservas_proximas }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5>Total Platos</h5>
+                <p class="display-6">{{ total_platos }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

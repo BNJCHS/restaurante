@@ -1,0 +1,30 @@
+{% extends 'base_admin.html' %}
+
+{% block content %}
+<h2>Platos</h2>
+<a class="btn btn-success mb-3" href="{% url 'crear_plato' %}">➕ Crear nuevo plato</a>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for plato in platos %}
+        <tr>
+            <td>{{ plato.nombre }}</td>
+            <td>${{ plato.precio }}</td>
+            <td>
+                <a class="btn btn-warning btn-sm" href="{% url 'editar_plato' plato.id %}">Editar</a>
+                <a class="btn btn-danger btn-sm" href="{% url 'eliminar_plato' plato.id %}">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="3">No hay platos registrados.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
