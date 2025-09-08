@@ -1,44 +1,50 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Inicio - Mi Restaurante{% endblock %}
 
 {% block content %}
-<section class="hero">
-    <h2>Bienvenido a Mi Restaurante</h2>
-    <p>Disfruta de nuestra comida y reserva tu mesa fácilmente.</p>
-    <div class="buttons">
-        <button id="pedido-btn">Hacer un pedido</button>
-        <button id="reserva-btn">Reservar mesa</button>
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Bienvenido a Mi Restaurante</h1>
+      <p>Donde cada plato es una experiencia inolvidable 🍷🍝</p>
+      <a href="#menu" class="btn">Ver Menú</a>
+      <a href="#reservas" class="btn btn-secondary">Reservar Mesa</a>
     </div>
+  </div>
 </section>
 
-<section id="form-container" class="hidden">
-    <div id="pedido-form" class="form hidden">
-        <h3>Formulario de Pedido</h3>
-        <form>
-            <label>Nombre:</label>
-            <input type="text" name="nombre" required>
-            <label>Plato:</label>
-            <input type="text" name="plato" required>
-            <label>Cantidad:</label>
-            <input type="number" name="cantidad" min="1" value="1">
-            <button type="submit">Enviar Pedido</button>
-        </form>
+<!-- Menú Destacado -->
+<section id="menu" class="menu-section">
+  <div class="container">
+    <h2>Nuestro Menú</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="{% static 'img/pasta.jpg' %}" alt="Pasta">
+        <h3>Pasta Artesanal</h3>
+        <p>Preparada con ingredientes frescos y salsa casera.</p>
+        <span class="price">$12.00</span>
+      </div>
+      <div class="menu-item">
+        <img src="{% static 'img/pizza.jpg' %}" alt="Pizza">
+        <h3>Pizza Rústica</h3>
+        <p>Masa fina, salsa de la casa y quesos seleccionados.</p>
+        <span class="price">$15.00</span>
+      </div>
+      <div class="menu-item">
+        <img src="{% static 'img/postre.jpg' %}" alt="Postre">
+        <h3>Tiramisú</h3>
+        <p>El clásico italiano que nunca falla.</p>
+        <span class="price">$8.00</span>
+      </div>
     </div>
-
-    <div id="reserva-form" class="form hidden">
-        <h3>Formulario de Reserva</h3>
-        <form>
-            <label>Nombre:</label>
-            <input type="text" name="nombre" required>
-            <label>Fecha:</label>
-            <input type="date" name="fecha" required>
-            <label>Hora:</label>
-            <input type="time" name="hora" required>
-            <label>Personas:</label>
-            <input type="number" name="personas" min="1" value="1">
-            <button type="submit">Reservar Mesa</button>
-        </form>
-    </div>
+  </div>
 </section>
+
+
+
+
 {% endblock %}

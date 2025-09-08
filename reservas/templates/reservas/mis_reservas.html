@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Mis reservas</h2>
+<ul>
+    {% for reserva in reservas %}
+        <li>
+            {{ reserva.fecha }} {{ reserva.hora }} - {{ reserva.cantidad_personas }} personas
+            <br>
+            <small>{{ reserva.mensaje }}</small>
+        </li>
+    {% empty %}
+        <p>No tienes reservas todavía.</p>
+    {% endfor %}
+</ul>
+{% endblock %}

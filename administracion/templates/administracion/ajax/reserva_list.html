@@ -1,0 +1,27 @@
+<h2>Lista de Reservas</h2>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Email</th>
+    <th>Teléfono</th>
+    <th>Fecha</th>
+    <th>Hora</th>
+    <th>Personas</th>
+    <th>Acciones</th>
+  </tr>
+  {% for r in reservas %}
+  <tr>
+    <td>{{ r.nombre }}</td>
+    <td>{{ r.email }}</td>
+    <td>{{ r.telefono }}</td>
+    <td>{{ r.fecha }}</td>
+    <td>{{ r.hora }}</td>
+    <td>{{ r.cantidad_personas }}</td>
+    <td>
+      <a href="#" onclick="loadEditReserva({{ r.id }})" class="btn">Editar</a>
+    </td>
+  </tr>
+  {% empty %}
+  <tr><td colspan="7">No hay reservas</td></tr>
+  {% endfor %}
+</table>

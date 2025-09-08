@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Mis Pedidos</h2>
+<ul>
+    {% for pedido in pedidos %}
+        <li>{{ pedido.plato }} x{{ pedido.cantidad }} - Estado: {{ pedido.get_estado_display }}</li>
+    {% empty %}
+        <li>No tenés pedidos aún.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

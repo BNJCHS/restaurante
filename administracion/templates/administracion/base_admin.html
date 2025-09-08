@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Admin - Restaurante</title>
+  <link rel="stylesheet" href="{% static 'administracion/admin.css' %}">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>🍴 Restaurante Admin</h2>
+      <nav>
+        <ul>
+          <li><a href="#" data-section="dashboard">📊 Dashboard</a></li>
+          <li><a href="#" data-section="platos">🍽 Platos</a></li>
+          <li><a href="#" data-section="pedidos">🛒 Pedidos</a></li>
+          <li><a href="#" data-section="reservas">📅 Reservas</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Contenido -->
+    <main class="content" id="admin-content">
+      <!-- Se carga con AJAX -->
+    </main>
+  </div>
+
+  <script src="{% static 'administracion/admin.js' %}"></script>
+</body>
+</html>

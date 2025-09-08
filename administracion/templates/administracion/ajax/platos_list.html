@@ -1,0 +1,16 @@
+<h2>Lista de Platos</h2>
+<table>
+    <thead>
+        <tr><th>Nombre</th><th>Precio</th></tr>
+    </thead>
+    <tbody>
+        {% for plato in platos %}
+        <tr>
+            <td>{{ plato.nombre }}</td>
+            <td>{{ plato.precio }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="2">No hay platos cargados.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
